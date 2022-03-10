@@ -347,9 +347,10 @@ namespace Ejercicio_1_Guía_6
             col = grafo;
             //Dibujando el contorno del nodo
             Rectangle rect = new Rectangle((int)(CoordenadaX - Radio / 2), (int)(CoordenadaY - Radio / 2), Radio, Radio);
-            Rectangle pruea = new Rectangle((int)(CoordenadaX - Radio / 2), (int)(CoordenadaY - Radio / 2), Radio, Radio);
+            Rectangle prueba = new Rectangle((int)(CoordenadaX - Radio / 2), (int)(CoordenadaY - Radio / 2), Radio, Radio);
             grafo.FillEllipse(encuentro, rect);
             grafo.FillEllipse(Relleno, rect);
+            grafo.DrawEllipse(Lapiz, rect);
 
             //Para dibujar el contenido del nodo
             StringFormat formato = new StringFormat();
@@ -372,17 +373,17 @@ namespace Ejercicio_1_Guía_6
         //Función para colorear
         public void colorear(Graphics grafo, Font fuente, Brush Relleno, Brush RellenoFuente,Pen Lapiz)
         {
-            //Dibujar el contorno del nodo
+            //Dibuja el contorno del nodo
             Rectangle rect = new Rectangle((int)(CoordenadaX - Radio / 2), (int)(CoordenadaY - Radio / 2), Radio, Radio);
             Rectangle prueba = new Rectangle((int)(CoordenadaX - Radio / 2), (int)(CoordenadaY - Radio / 2), Radio, Radio);
             grafo.FillEllipse(Relleno, rect);
             grafo.DrawEllipse(Lapiz, rect);
 
-            //Dibujar el nombre
+            //Dibuja el nombre
             StringFormat formato = new StringFormat();
             formato.Alignment = StringAlignment.Center;
             formato.LineAlignment = StringAlignment.Center;
-            grafo.DrawString(info.ToString(),fuente,RellenoFuente,CoordenadaX,CoordenadaY,formato);
+            grafo.DrawString(info.ToString(), fuente, RellenoFuente, CoordenadaX, CoordenadaY, formato);
 
         }
 
