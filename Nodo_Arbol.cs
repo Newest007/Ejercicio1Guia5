@@ -21,6 +21,7 @@ namespace Ejercicio_1_Guía_6
         public int nivel;
         public Rectangle nodo; //Objeto para dibujar el nodo del árbol
 
+
         //Variable para definir el tamaño de los circulos que van a representar los nodos del árbol
         private const int Radio = 30;
 
@@ -59,7 +60,50 @@ namespace Ejercicio_1_Guía_6
             Padre = padre;
             altura = 0;
         }
+
+        //============================================================
+        //Cambios hechos:
         
+        public List<int> listaPreorden = new List<int>();
+        public List<int> listaInorden = new List<int>();
+        public List<int> listaPostorden = new List<int>();
+
+        public void preorden(Nodo_Arbol nodo)
+        {
+
+            if(nodo != null)
+            {
+                listaPreorden.Add(nodo.info);
+                preorden(nodo.Izquierdo);
+                preorden(nodo.Derecho);
+            }
+
+        }
+
+        public void inorden(Nodo_Arbol nodo)
+        {
+
+            if(nodo != null)
+            {
+                inorden(nodo.Izquierdo);
+                listaInorden.Add(nodo.info);
+                inorden(nodo.Derecho);
+            }
+        }
+
+        public void postorden(Nodo_Arbol nodo)
+        {
+
+            if(nodo != null)
+            {
+                postorden(nodo.Izquierdo);
+                postorden(nodo.Derecho);
+                listaPostorden.Add(nodo.info);
+            }
+        }
+
+        //=============================================================
+
         //===========================================//
         // Método para insertar un nodo en el árbol
         //===========================================//
@@ -90,7 +134,7 @@ namespace Ejercicio_1_Guía_6
         }
 
         //Método para verificar la altura del árbol
-        private static int Alturas(Nodo_Arbol t)
+        public static int Alturas(Nodo_Arbol t)
         {
             return t == null ? -1 : t.altura;
         }
@@ -106,6 +150,10 @@ namespace Ejercicio_1_Guía_6
         //====================================================//
         public void Eliminar(int x, ref Nodo_Arbol t)
         {
+            listaInorden.Clear();
+            listaPostorden.Clear();
+            listaPreorden.Clear();
+
             if(t != null) //Si la raíz es diferente de null
             {
                 if( x < t.info) // Si el valor a eliminar es menor que la raíz

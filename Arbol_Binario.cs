@@ -13,8 +13,8 @@ namespace Ejercicio_1_Guía_6
     {
         public Nodo_Arbol Raiz;
         public Nodo_Arbol aux;
+        public int prueba = 1;
 
-        public int altura = 0;
 
         public Arbol_Binario()
         {
@@ -41,7 +41,6 @@ namespace Ejercicio_1_Guía_6
             else
                 Raiz = Raiz.Insertar(x, Raiz, Raiz.nivel);
 
-            altura++;
 
         }
 
@@ -53,7 +52,6 @@ namespace Ejercicio_1_Guía_6
             else
                 Raiz.Eliminar(x, ref Raiz);
 
-            altura--;
         }
 
         //Función para buscar
@@ -65,13 +63,14 @@ namespace Ejercicio_1_Guía_6
             }
         }
 
+
         //==================================================================//
         //      Funciones para dibujar el árbol en el formulario
         //==================================================================//
         public void DibujarArbol(Graphics grafo, Font fuente, Brush Relleno, Brush RellenoFuente, Pen Lapiz, Brush encuentro)
         {
-            int x = 250; //Posición inicial de la raíz del árbol
-            int y = 200;
+            int x = 200; //Posición inicial de la raíz del árbol
+            int y = 220;
             if (Raiz == null)
                 return;
             Raiz.PosicionNodo(ref x, y); //Posición de cada nodo
@@ -82,8 +81,8 @@ namespace Ejercicio_1_Guía_6
         }
 
         //Posiciones iniciales de la raíz del árbol
-        public int x1 = 250;
-        public int y2 = 200;
+        public int x1 = 200;
+        public int y2 = 220;
 
         //Función para colorear los nodos
         public void colorear(Graphics grafo, Font fuente, Brush Relleno, Brush RellenoFuente, Pen Lapiz, Nodo_Arbol Raiz, bool post ,bool inor, bool preor)
@@ -133,6 +132,7 @@ namespace Ejercicio_1_Guía_6
             }
 
         }
+
 
 
     }
