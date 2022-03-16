@@ -161,6 +161,12 @@ namespace Ejercicio_1_Guía_6
             //Boton para sumar todos los valores que hay dentro de cada nodo del arbol binario 
             int suma = valoresNodos.Sum();
             label2.Text = "" + suma;
+            label5.Text = "" + cont;
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
 
         }
     }
