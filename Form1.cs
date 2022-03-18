@@ -54,6 +54,7 @@ namespace Ejercicio_1_Guía_6
 
         private void button1_Click(object sender, EventArgs e)
         {
+
             Dato = Convert.ToInt32(nmUpDown.Value);
             mi_Arbol.Insertar(Dato);
             //===============================================//
@@ -149,12 +150,9 @@ namespace Ejercicio_1_Guía_6
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-        }
+        private void button1_Click_1(object sender, EventArgs e) { }
     
-
-
+        
 
         private void button1_Click_2(object sender, EventArgs e)
         {
@@ -162,6 +160,11 @@ namespace Ejercicio_1_Guía_6
             int suma = valoresNodos.Sum();
             label2.Text = "" + suma;
             label5.Text = "" + cont;
+
+            if (mi_Arbol.Raiz != null)
+            {
+                label6.Text = "" + nodo_DelArbol.calcular_Altura(mi_Arbol.Raiz);
+            }
 
         }
 

@@ -43,6 +43,7 @@ namespace Ejercicio_1_Guía_6
             this.button1 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmUpDown)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -221,11 +222,22 @@ namespace Ejercicio_1_Guía_6
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(584, 504);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(26, 28);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "__";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(691, 544);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button1);
@@ -266,6 +278,7 @@ namespace Ejercicio_1_Guía_6
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }
 

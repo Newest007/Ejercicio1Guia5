@@ -22,7 +22,7 @@ namespace Ejercicio_1_Guía_6
         }
 
         //Función para añadir un dato si en cierto caso el árbol esta vacío
-        public Arbol_Binario(Nodo_Arbol nueva_raiz) 
+        public Arbol_Binario(Nodo_Arbol nueva_raiz)
         {
             Raiz = nueva_raiz;
         }
@@ -32,7 +32,7 @@ namespace Ejercicio_1_Guía_6
         //Función para agregar un nuevo valor (nodo) al árbol binario
         public void Insertar(int x)
         {
-            
+
             if (Raiz == null)
             {
                 Raiz = new Nodo_Arbol(x, null, null, null);
@@ -85,15 +85,15 @@ namespace Ejercicio_1_Guía_6
         public int y2 = 220;
 
         //Función para colorear los nodos
-        public void colorear(Graphics grafo, Font fuente, Brush Relleno, Brush RellenoFuente, Pen Lapiz, Nodo_Arbol Raiz, bool post ,bool inor, bool preor)
+        public void colorear(Graphics grafo, Font fuente, Brush Relleno, Brush RellenoFuente, Pen Lapiz, Nodo_Arbol Raiz, bool post, bool inor, bool preor)
         {
             //Inor==>Inorden
             //Preor==>Preorden
             //Pos==>Postorden
             Brush entorno = Brushes.Red;
-            if(inor == true)
+            if (inor == true)
             {
-                if(Raiz != null)
+                if (Raiz != null)
                 {
                     colorear(grafo, fuente, Relleno, RellenoFuente, Lapiz, Raiz.Izquierdo, post, inor, preor);
                     Raiz.colorear(grafo, fuente, entorno, Relleno, Lapiz);
@@ -101,14 +101,14 @@ namespace Ejercicio_1_Guía_6
 
                     Raiz.colorear(grafo, fuente, Relleno, RellenoFuente, Lapiz);
                     colorear(grafo, fuente, Relleno, RellenoFuente, Lapiz, Raiz.Derecho, post, inor, preor);
-                    
+
                 }
-                
+
             }
             else
-                if(preor == true)
+                if (preor == true)
             {
-                if(Raiz != null)
+                if (Raiz != null)
                 {
                     Raiz.colorear(grafo, fuente, entorno, RellenoFuente, Lapiz);
                     Thread.Sleep(1000); //Pausa la ejecución 1000 milisegundos
@@ -116,12 +116,12 @@ namespace Ejercicio_1_Guía_6
                     Raiz.colorear(grafo, fuente, Relleno, RellenoFuente, Lapiz);
                     colorear(grafo, fuente, Relleno, RellenoFuente, Lapiz, Raiz.Izquierdo, post, inor, preor);
                     colorear(grafo, fuente, Relleno, RellenoFuente, Lapiz, Raiz.Derecho, post, inor, preor)
-;                }
+; }
             }
             else
-                if(post == true)
+                if (post == true)
             {
-                if(Raiz != null)
+                if (Raiz != null)
                 {
                     colorear(grafo, fuente, Relleno, RellenoFuente, Lapiz, Raiz.Izquierdo, post, inor, preor);
                     colorear(grafo, fuente, Relleno, RellenoFuente, Lapiz, Raiz.Derecho, post, inor, preor);
@@ -132,6 +132,9 @@ namespace Ejercicio_1_Guía_6
             }
 
         }
+    
+
+
 
 
 

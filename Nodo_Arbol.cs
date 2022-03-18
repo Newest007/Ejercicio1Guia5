@@ -49,6 +49,14 @@ namespace Ejercicio_1_Guía_6
             get { return arbol; }
             set { arbol = value; }
         }
+
+        //Constructor por defecto para la altura
+        public int Altura
+        {
+            get { return alturaArbol = 0; }
+            set { alturaArbol = value; }
+        }
+
         //=================================================================//
         // Constructor que toma 4 parámetros, es el más importante de todos
         //=================================================================//
@@ -433,6 +441,36 @@ namespace Ejercicio_1_Guía_6
             formato.LineAlignment = StringAlignment.Center;
             grafo.DrawString(info.ToString(), fuente, RellenoFuente, CoordenadaX, CoordenadaY, formato);
 
+        }
+
+        //============================================================//
+        //    Cambios hechos para calcular la altura del árbol
+        //============================================================//
+
+        public int izquierdoAltura = 0, derechoAltura = 0;
+        public int alturaArbol = 0;
+
+        public int calcular_Altura(Nodo_Arbol nodo)
+        {
+            if(nodo == null)
+            {
+                alturaArbol = 0;
+            }
+            else
+            {
+                izquierdoAltura = calcular_Altura(nodo.Izquierdo);
+                derechoAltura = calcular_Altura(nodo.Derecho);
+
+                if(izquierdoAltura > derechoAltura)
+                {
+                    alturaArbol = izquierdoAltura + 1;
+                }
+                else
+                {
+                    alturaArbol = derechoAltura + 1;
+                }
+            }
+            return alturaArbol;
         }
 
 
